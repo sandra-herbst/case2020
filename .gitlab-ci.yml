@@ -1,0 +1,17 @@
+stages:
+    - test
+    - build
+
+image: maven:latest
+
+unit-tests:
+  stage: test
+  script:
+    - cd pointnclick_Game/
+    - mvn verify --batch-mode
+
+compile:
+  stage: build
+  script:
+    - cd pointnclick_Game/
+    - mvn compile --batch-mode
